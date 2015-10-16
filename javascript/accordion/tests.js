@@ -1,8 +1,14 @@
 $(document).ready(function(){
   module("Accordion tests");
 
-  test("example test", function() {
-    ok(true);
+  test('hideAll();', function(){
+    var testDiv = $('#testDiv');
+    hideAll(testDiv);
+    equal(false, testDiv.is(":visible"));
   });
+
+  test('showContent', function(){
+    equal(true,)
+  })
 
 });
