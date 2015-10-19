@@ -5,8 +5,18 @@
   <script src="http://code.jquery.com/jquery-latest.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/backbone.paginator/0.8/backbone.paginator.js'></script>
 </head>
 <body>
+<ul>
+<script type="text/template" id="quotes-template">
+    <% _.each(quotes, function (quote) { %>
+        <li>"<%= quote.quote %>" -<%= quote.source %>,  <%=quote.context %></p>
+    <% }); %>
+</script>
+
+</ul>
 
 </body>
+<script src = 'application.js'></script>
 </html>
