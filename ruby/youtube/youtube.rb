@@ -2,7 +2,7 @@ require 'rubygems'
 gem 'google-api-client', '>0.7'
 require 'google/api_client'
 
-DEVELOPER_KEY = ''
+DEVELOPER_KEY = 'AIzaSyAbQpxvB5VTvNjR1-45zKsUESM-mJY2A2c'
 YOUTUBE_API_SERVICE_NAME = 'youtube'
 YOUTUBE_API_VERSION = 'v3'
 
@@ -30,12 +30,10 @@ def main
       :parameters => {
         :part => 'snippet',
         :q => input,
-        :maxResults => 4
+        :maxResults => 3
       }
     )
-
     videos = []
-
     search_response.data.items.each do |search_result|
       case search_result.id.kind
         when 'youtube#video'
