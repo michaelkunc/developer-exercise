@@ -29,14 +29,25 @@ var QuoteView = Backbone.View.extend({
     template: _.template($("#quotes-template").html()),
 
     render: function() {
-      var stuff = this.template({
+      var quoteDetails = this.template({
             quotes: this.collection.toJSON()
         });
-        console.log(stuff);
-        $(this.el).append(stuff);
+        $(this.el).append(quoteDetails);
   }
 });
 
 var quoteView = new QuoteView({
     el: $('ul')
+});
+
+$('ul').hide();
+
+var startIndex = 0;
+var liLength = 15;
+
+$('button').click(function(){
+    $('ul').show();
+    $('li').hide();
+    $("li").slice(startIndex,startIndex + liLength).show();
+    startIndex += 10;
 });
